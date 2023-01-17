@@ -1,10 +1,10 @@
 # pal_mobile_base_docker (Melodic)
 
-This package contains the Melodic Dockerfile for TIAGo Base (pmb2) and TIAGo OMNI Base online tutorials
+This package contains the Melodic Dockerfile for TIAGo Base (PMB2) and TIAGo OMNI Base online tutorials.
 
-**Important Note: This Dockerfile is meant to be used to explore the functionalities of PAL Robotics mobile base, It is not meant for development on the real robots since more functionalities are available in the Docker provided to customers when purchasing the robot.**
+**Important Note: This Dockerfile is meant to be used to explore the functionalities of PAL Robotics mobile bases, it is not meant for development on the real robots since more functionalities are available in the dockers provided to customers when purchasing a robot.**
 
-The other branch noetic-devel contains the Dockerfile for noetic
+You can find the Dockerfile corresponding to each ROS distribution in its respective branch.
 
 To use this Docker you can either:
 
@@ -37,7 +37,7 @@ The tutorials that can be followed thanks to this Docker are listed here:
 
 ## Git Repo & Bugtracker
 
-If issues are encountered during those tutorials please open an issue on the appropriate repository
+If issues are encountered during those tutorials please open an issue on the appropriate repository.
 
 ### TIAGo Base (PMB2)
 * **Repository**: [https://github.com/pal-robotics/pmb2_tutorials](https://github.com/pal-robotics/pmb2_tutorials)
