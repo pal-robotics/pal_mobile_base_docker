@@ -62,7 +62,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-noetic-twist-mux \
     ros-noetic-slam-gmapping \
     ros-noetic-urdf-geometry-parser \
- && rm -rf /var/lib/apt/lists/*
+ && rm -rf /var/lib/apt/lists/* \
  && wget https://raw.githubusercontent.com/pal-robotics/pmb2_tutorials/noetic-devel/pmb2_public-noetic.rosinstall \
  && wget https://raw.githubusercontent.com/pal-robotics/omni_base_tutorials/noetic-devel/omni_base_public-noetic.rosinstall \
  && wget https://raw.githubusercontent.com/pal-robotics/pmb3_tutorials/noetic-devel/pmb3_public-noetic.rosinstall \
