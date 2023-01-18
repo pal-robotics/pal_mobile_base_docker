@@ -46,8 +46,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python-rosinstall \
     python-catkin-tools \
   && rm -rf /var/lib/apt/lists/* \
-  && wget https://raw.githubusercontent.com/pal-robotics/pmb2_tutorials/kinetic-devel/pmb2_public-melodic.rosinstall \
-  && wget https://raw.githubusercontent.com/pal-robotics/omni_base_tutorials/master/omni_base_public-melodic.rosinstall \
+  && wget https://raw.githubusercontent.com/pal-robotics/pmb2_tutorials/melodic-devel/pmb2_public-melodic.rosinstall \
+  && wget https://raw.githubusercontent.com/pal-robotics/omni_base_tutorials/melodic-devel/omni_base_public-melodic.rosinstall \
   && vcs import src < pmb2_public-melodic.rosinstall \
   && vcs import src < omni_base_public-melodic.rosinstall
 
