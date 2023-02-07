@@ -63,15 +63,17 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-noetic-slam-gmapping \
     ros-noetic-urdf-geometry-parser \
  && rm -rf /var/lib/apt/lists/* \
+ && wget https://raw.githubusercontent.com/pal-robotics/pal_mobile_base_docker/noetic-devel/common_public-noetic.rosinstall \
  && wget https://raw.githubusercontent.com/pal-robotics/pmb2_tutorials/noetic-devel/pmb2_public-noetic.rosinstall \
  && wget https://raw.githubusercontent.com/pal-robotics/omni_base_tutorials/noetic-devel/omni_base_public-noetic.rosinstall \
  && wget https://raw.githubusercontent.com/pal-robotics/pmb3_tutorials/noetic-devel/pmb3_public-noetic.rosinstall \
+ && vcs import src < common_public-noetic.rosinstall \
  && vcs import src < pmb2_public-noetic.rosinstall \
  && vcs import src < omni_base_public-noetic.rosinstall \
  && vcs import src < pmb3_public-noetic.rosinstall
 
 
-ARG ROSDEP_IGNORE="pal_gazebo_plugins speed_limit_node sensor_to_cloud pmb3_rgbd_sensors pal_vo_server pal_karto pal_usb_utils pal_local_planner pal_filters hokuyo_node rrbot_launch robot_pose pal_pcl pal-orbbec-openni2 slam_toolbox omni_drive_controller librealsense2-utils librealsense2-dev librealsense2-dkms urdf_test ydlidar_ros_driver node_doctor"
+ARG ROSDEP_IGNORE="pal_gazebo_plugins speed_limit_node sensor_to_cloud pmb3_rgbd_sensors pal_vo_server pal_karto pal_usb_utils pal_local_planner pal_filters hokuyo_node rrbot_launch robot_pose pal_pcl pal-orbbec-openni2 slam_toolbox omni_drive_controller librealsense2-utils librealsense2-dev librealsense2-dkms urdf_test ydlidar_ros_driver node_doctor pal_map_manager"
 
 RUN apt-get update && rosdep install --from-paths src --ignore-src -y --rosdistro noetic --skip-keys="${ROSDEP_IGNORE}"
 
