@@ -46,7 +46,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python-rosinstall \
     python-catkin-tools \
   && rm -rf /var/lib/apt/lists/* \
-  && wget https://raw.githubusercontent.com/pal-robotics/pal_mobile_base/melodic-devel/common_public-melodic.rosinstall \
+  && wget https://raw.githubusercontent.com/pal-robotics/pal_mobile_base_docker/melodic-devel/common_public-melodic.rosinstall \
   && wget https://raw.githubusercontent.com/pal-robotics/pmb2_tutorials/melodic-devel/pmb2_public-melodic.rosinstall \
   && wget https://raw.githubusercontent.com/pal-robotics/omni_base_tutorials/melodic-devel/omni_base_public-melodic.rosinstall \
   && vcs import src < common_public-melodic.rosinstall \
