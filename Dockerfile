@@ -46,12 +46,14 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python-rosinstall \
     python-catkin-tools \
   && rm -rf /var/lib/apt/lists/* \
+  && wget https://raw.githubusercontent.com/pal-robotics/pal_mobile_base_docker/melodic-devel/common_public-melodic.rosinstall \
   && wget https://raw.githubusercontent.com/pal-robotics/pmb2_tutorials/melodic-devel/pmb2_public-melodic.rosinstall \
   && wget https://raw.githubusercontent.com/pal-robotics/omni_base_tutorials/melodic-devel/omni_base_public-melodic.rosinstall \
+  && vcs import src < common_public-melodic.rosinstall \
   && vcs import src < pmb2_public-melodic.rosinstall \
   && vcs import src < omni_base_public-melodic.rosinstall
 
-ARG ROSDEP_IGNORE="pal_gazebo_plugins speed_limit_node sensor_to_cloud pmb2_rgbd_sensors pal_vo_server pal_karto pal_usb_utils pal_local_planner pal_filters hokuyo_node rrbot_launch robot_pose pal_pcl rviz_plugin_covariance pal-orbbec-openni2 slam_toolbox omni_drive_controller"
+ARG ROSDEP_IGNORE="pal_gazebo_plugins speed_limit_node sensor_to_cloud pmb2_rgbd_sensors pal_vo_server pal_karto pal_usb_utils pal_local_planner pal_filters hokuyo_node rrbot_launch robot_pose pal_pcl rviz_plugin_covariance pal-orbbec-openni2 slam_toolbox omni_drive_controller pal_map_manager"
 
 RUN apt-get update && rosdep install --from-paths src --ignore-src -y --rosdistro melodic --skip-keys="${ROSDEP_IGNORE}"
 
