@@ -19,7 +19,7 @@ or
 ```
 cd pal_mobile_base_docker
 
-docker build --no-cache -t pal_mobile_base_melodic_docker .
+docker build --no-cache -t pal_mobile_base_noetic_docker .
 ```
 ## Pulling Image
 
